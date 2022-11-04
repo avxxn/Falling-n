@@ -345,7 +345,7 @@ module.exports = bosco = async (bosco, mek) => {
                         participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289523258649-1604595598@g.us" } : {})
                     },
                     message: {
-                        "imageMessage": {
+                        "لصوره": {
                             "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
                             "mimetype": "image/jpeg",
                             "caption": fake,
@@ -1006,11 +1006,11 @@ const ftrol = {
 ▢ 𝑶 𝑾 𝑵 𝑬 𝑹 - 𝑴 𝑬 𝑵 𝑼 ▢ 
 
 
-▢ ${prefix}setbgmpic
+▢ ${prefix}
 
 ▢ ${prefix}setthumb
 
-▢ ${prefix}clearall
+▢ ${prefix}امسح الكل 
 
 ▢ ${prefix}tobc
 
@@ -1175,7 +1175,7 @@ catlo(storage1)
 ▢ 𝑬 𝑿 𝑻 𝑹 𝑨 - 𝑴 𝑬 𝑵 𝑼 ▢ 
 
 
-▢ ${prefix}chat
+▢ ${prefix}دردشة 
 
 ▢ ${prefix}fitnahpc
 
