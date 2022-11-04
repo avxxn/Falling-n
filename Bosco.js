@@ -953,7 +953,7 @@ const ftrol = {
             if (!mek.key.fromMe && banChats === true) return
             switch(command){
            
-            case 'owner':
+            case 'المالك👤':
             ini_ownerNumber = [`${setting.owner}@s.whatsapp.net`,`917736622139@s.whatsapp.net`,`12502880746@s.whatsapp.net`,`${setting.owner}@s.whatsapp.net`,`${setting.owner}@s.whatsapp.net`]
             let ini_list = []
 		    for (let i of ini_ownerNumber) {
@@ -968,7 +968,7 @@ const ftrol = {
 			 "contacts": ini_list 
 			 }, 'contactsArrayMessage', {quoted:mek})
 		     break
-        case 'menu':
+        case 'الاوامر':
         case 'bosco':
         case 'cmd':
         groups = bosco.chats.array.filter(v => v.jid.endsWith('g.us'))
@@ -979,7 +979,7 @@ const ftrol = {
         timestampe = speed();
         latensie = speed() - timestampe
  hehe = `
- ▢ Hɪ Bʀᴏ @${sender.split("@")[0]}
+ ▢ مرحبا بك يا @${sender.split("@")[0]}
  ▢ Pʀɪᴠᴀᴛᴇ : ${privat.length}
  ▢ Gʀᴏᴜᴘs : ${groups.length}
  ▢ Tᴏᴛᴀʟ : ${totalChat.length}
@@ -1057,27 +1057,27 @@ catlo(owner1)
 ▢ 𝑮 𝑹 𝑶 𝑼 𝑷 - 𝑴 𝑬 𝑵 𝑼 ▢ 
  
 
-▢ ${prefix}add
-
-▢ ${prefix}kick
-
-▢ ${prefix}promote
-
-▢ ${prefix}demote
-
-▢ ${prefix}disappear
-
-▢ ${prefix}group
-
-▢ ${prefix}antilink
-
+▢ ${prefix}إضافة
+إضافة اي شخص الي الجروب 
+▢ ${prefix}طرد
+طرد اي شخص من الجروب 
+▢ ${prefix}ترقيه
+رفع اشخص من عضو الي مشرف
+▢ ${prefix}تخفيض 
+تنزيل من مشرف إلى عضو
+▢ ${prefix}اختفاء 
+ترك رسالة الاختفاء 
+▢ ${prefix}مجموعة 
+تغيير اعدادت المجموعة 
+▢ ${prefix}مضاد الارتباط
+تفقد الجروب 
 ▢ ${prefix}totag
 
 ▢ ${prefix}hidetag
 
 ▢ ${prefix}translate
 
-▢ ${prefix}getdeskgc
+▢ ${prefix}getdeskgc. 
 
 ▢ ${prefix}getbio
 
@@ -1899,9 +1899,9 @@ break
 						fs.unlinkSync(ran)
 					})
 					break
-      case 'kick':
-if (!isOwner && !isGroupAdmins) return reply('*Admin Group Only*')
-if (!isBotGroupAdmins) return reply('*Bot not admin!*')
+      case 'طرد':
+if (!isOwner && !isGroupAdmins) return reply('*مجموعة الإدارة فقط*')
+if (!isBotGroupAdmins) return reply('*هت الإشراف أولاً واسترجل*')
 if (!isGroup) return
 if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
 if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
@@ -1920,9 +1920,9 @@ entah = mek.message.extendedTextMessage.contextInfo.participant
 bosco.groupRemove(from, [entah])
 }
 break
-case 'add':
-      if (!isOwner && !isGroupAdmins) return reply('*Admin Group Only*')
-if (!isBotGroupAdmins) return reply('*Bot not admin!*')
+case 'إضافة':
+      if (!isOwner && !isGroupAdmins) return reply('*مجموعة الإدارة فقط*')
+if (!isBotGroupAdmins) return reply('*هت الإشراف أولاً واسترجل!*')
 if (!isGroup) return
 if (mek.message.extendedTextMessage === null || mek.message.extendedTextMessage === undefined) return;
 if (mek.message.extendedTextMessage.contextInfo.participant === undefined) {
@@ -1941,7 +1941,7 @@ entah = mek.message.extendedTextMessage.contextInfo.participant
 bosco.groupAdd(from, [entah])
 }
 break
-case 'promote':
+case 'ترقية':
 if (!isGroupAdmins) return reply('*Admin Group Only*')
 if (!isBotGroupAdmins) return reply('*Bot not admin!*')
 if (!isGroup) return
@@ -1962,7 +1962,7 @@ entah = mek.message.extendedTextMessage.contextInfo.participant
 bosco.groupMakeAdmin(from, [entah])
 }
 break
-case 'demote':
+case 'تخفيض':
       if (!isOwner && !isGroupAdmins) return reply('*Admin Group Only*')
 if (!isBotGroupAdmins) return reply('*Bot not admin!*')
 if (!isGroup) return
@@ -1993,14 +1993,14 @@ break
 					     encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 						buff = await bosco.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							bosco.sendMessage(_.jid, buff, image, { caption: `${body.slice(4)}`})
+							bosco.sendMessage(_.طريقة, buff, image, { caption: `${body.slice(4)}`})
 						}
 						reply(`*Broadcast success* ${body.slice(4)}`)
 						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
 						 encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 						buff = await bosco.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							bosco.sendMessage(_.jid, buff, video, { caption: `${body.slice(4)}`})
+							bosco.sendMessage(_.طريقة, buff, video, { caption: `${body.slice(4)}`})
 						}
 						reply(`*Broadcast success* ${body.slice(4)}`)
 						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
@@ -2051,7 +2051,7 @@ break
                           reply(mess.error.api)
                           }
                           break
-           case 'chat':
+           case 'دردشه':
 			if (args[0].startsWith('08')) return reply('*Prefix number with 91*')
             if (args[0].startsWith('+91')) return reply('*Prefix number with 91*')
 			if (args.length < 1) return reply(`Penggunaan ${prefix}chat 91xxxx|teks`)
@@ -2082,13 +2082,13 @@ break
               break
 //------------------< Public/Self >-------------------
 
-        case 'public':
+        case 'عام':
           	if (!mek.key.fromMe) return 
           	if (banChats === false) return 
           	banChats = false
               fgclink(`*[ PUBLIC - MODE ]*`)
           	break
-	case 'self':
+	case 'خاص':
           	if (!mek.key.fromMe) return 
           	if (banChats === true) return
           	uptime = process.uptime()
@@ -2098,7 +2098,7 @@ break
 
 //------------------< Downloader/And Search Media >-------------------
 
-       case 'igdl': 
+       case 'استجرام': 
        case 'instagram':
               if (!q) return reply('*Which Links?*')
               if (!q.includes('instagram')) return reply(mess.error.Iv)
@@ -2157,21 +2157,21 @@ break
               bosco.relayWAMessage(prep)
               fs.unlinkSync(`./${sender}.jpeg`)
               break
-       case 'yts':
+       case 'بحث':
        case 'ytsearch':
               if (!q) return reply(mess.wrongFormat)
               reply(mess.wait)
               try {
               res = await yts(q)
-              a = `*Youtube Search 🔎*\n`
+              a = `*بحث يوتيوب🔎*\n`
 for (let i of res.all) {
 a += `
-📜 Title : ${i.title}
-🎞️ Views : ${i.views}
-🌐 Upload : ${i.ago}
-⏱️ Duration : ${i.timestamp}
-🎥 Channel : ${i.author.name}
-🖇️ Link : ${i.url}\n`
+📜 عنوان : ${i.title}
+🎞️ الآراء : ${i.views}
+🌐 تحميل : ${i.ago}
+⏱️ مده : ${i.timestamp}
+🎥 قناة : ${i.author.name}
+🖇️ نهاية لهذه الغاية : ${i.url}\n`
 }
                b = a.trim()
                sendFileFromUrl(res.all[0].image, image, {quoted: mek, thumbnail: Buffer.alloc(0), caption: b})
@@ -2189,7 +2189,7 @@ a += `
              .then((data) => { sendMediaURL(from, data.result, data.title, mek) })
              .catch((err) => { reply(String(err)) })
               break
-       case 'tourl':
+       case 'تورل':
                if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedVideo ) && args.length == 0) {
                reply(mess.wait)
                boij = isQuotedImage || isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -2212,7 +2212,7 @@ a += `
               bosco.sendMessage(from, ini_buffer, sticker, {})
 }
               break
-       case 'ghsearch': 
+       case 'بحث جوجل': 
        case 'githubsearch': 
        case 'searchgithub':
              if (!q) return reply('*What are you looking for?*')
@@ -2280,7 +2280,7 @@ ${repo.open_issues} Issue${repo.description ? `
              get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${lolkey}&url=${ini_link}`)
              bosco.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: mek })
              break
-      case 'google':
+      case 'جل جل':
               if (!q) return reply(mess.wrongFormat)
               ss = await getBuffer(`https://api.apiflash.com/v1/urltoimage?access_key=f3fce33fa6804c0b97c897b3bd2ec7a8&url=https://google.com/search?q=${q}`)
               if(q == undefined || q == ' ') return reply(`*Search result : ${q}* not found`)
@@ -2305,21 +2305,21 @@ ${repo.open_issues} Issue${repo.description ? `
                  reply(`${e}`)
                  }
                break
-        case 'mediafire':
+        case 'ميديافاير':
                if (args.length < 1) return reply('*Where is the link?*')
                if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.Iv)
                teks = args.join(' ')
                res = await mediafireDl(teks)
                result = `*MediaFire Downloader*
       
-📜 Name : ${res[0].nama}
-💡 Size : ${res[0].size}
-🖇️ Link : ${res[0].link}
+📜 اسم : ${res[0].nama}
+💡 لحجم : ${res[0].size}
+🖇️ نهاية لهذه الغاية : ${res[0].link}
 *_please wait_*`
              reply(result)
              sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: mek})
              break
-      case 'fb':
+      case 'الفيسبوك':
       case 'facebook':
              if (args.length == 0) return reply(`Ex:- ${prefix}fb Legend `)
              if (!q) return
@@ -2332,7 +2332,7 @@ ${repo.open_issues} Issue${repo.description ? `
              reply(`${e}`)
              }
              break
-      case 'twitter':
+      case 'تويتر':
              if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(mess.Iv)
              if (!q) return reply('the link?')
              ten = args[0]
@@ -2342,7 +2342,7 @@ ${repo.open_issues} Issue${repo.description ? `
              sendMediaURL(from,ren,'Done')
              })
              break
-      case 'lyric':
+      case 'كلمات الأغنية':
                if (!q) return reply(mess.wrongFormat)
                reply(mess.wait)
                lirikLagu(q).then((res) => {
@@ -2385,7 +2385,7 @@ teks += `*▢ Title : ${get_result[i].title}*
              res = await yts(teks)
              reply(res.all[0].description)
              break
-      case 'buttons1':
+      case 'الأزرار 1':
               if (args.length < 1) return reply('*Where is the link?*')
               if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
               teks = args.join(' ')
@@ -2412,7 +2412,7 @@ teks += `*▢ Title : ${get_result[i].title}*
              data = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${lolkey}&url=${args[0]}`)
              bosco.sendMessage(from, data, audio, { quoted: mek })
              break
-      case 'alive':
+      case 'القائمة':
               bosco1 = await bosco.prepareMessage(from, denis, location, {thumbnail: denis})
               bosco2 = bosco1.message["ephemeralMessage"] ? bosco1.message.ephemeralMessage : bosco1
               groups = bosco.chats.array.filter(v => v.jid.endsWith('g.us'))
@@ -2458,7 +2458,7 @@ teks = `
               bosco.relayWAMessage(prep)
               break
        
-         case 'antilink':
+         case 'مضاد الارتباط':
               if (!isGroup) return reply(mess.group)
               if (!isBotGroupAdmins) return reply(`*Bot Must be Admin*`)
               if (!q) return reply(`*Select enable or disable*`)
@@ -2498,7 +2498,7 @@ teks = `
 
  //------------------< Extra >-------------------
  
-       case 'brainly':
+       case 'ذكي':
              brainly(args.join(" ")).then(res => {
              hmm = '────────────\n'
              for (let Y of res.data) {
@@ -2530,14 +2530,14 @@ teks = `
 						reply(`*Send Photos With Caption ${prefix}ocr*`)
 					}
 					break
-      case 'tod':
+      case 'تود':
               result =`*Truth Or Dare*\nPlayers are given the choice between answering questions honestly, or taking on the challenge given`
               buttons = [{buttonId: `${prefix}buttons6`,buttonText:{displayText: 'Truth'},type:1},{buttonId:`${prefix}buttons5`,buttonText:{displayText:'Dare'},type:1},{buttonId:`${prefix}tod`,buttonText:{displayText:'Tod'},type:1}]
               buttonsMessage = { contentText: `${result}`, footerText: 'Truth or challenge?', buttons: buttons, headerType: 1 }
               prep = await bosco.prepareMessageFromContent(from,{buttonsMessage},{})
               bosco.relayWAMessage(prep)
               break
-        case 'anime':
+        case 'قصص مصورة يابانية':
               let wipu = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/${command}.json`)).data
               let wipi = wipu[Math.floor(Math.random() * (wipu.length))]
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
@@ -2549,7 +2549,7 @@ teks = `
               bosco.relayWAMessage(prep)
               fs.unlinkSync(`./${sender}.jpeg`)
               break
-        case 'song':
+        case 'اغنية':
         case 'play':
                if (args.length < 1) return reply('*What do you want to search?*')
                teks = args.join(' ')
