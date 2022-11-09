@@ -1,19 +1,19 @@
 exports.gameMenu = (prefix) => {
     return `
 ╔════ɢᴀᴍᴇ-ᴍᴇɴᴜ══════❥︎
-╠➤ ${prefix}slot
-╠➤ ${prefix}limitgame
-╠➤ ${prefix}gelud @tag
-╠➤ ${prefix}tictactoe @tag
-╠➤ ${prefix}siapaaku
-╠➤ ${prefix}family100
-╠➤ ${prefix}kuismath
-╠➤ ${prefix}asahotak
-╠➤ ${prefix}tebaklirik
-╠➤ ${prefix}tebaklagu
+╠➤ ${prefix}فتحه
+╠➤ ${prefix}لعبة محدودة
+╠➤ ${prefix}كاذب @tag
+╠➤ ${prefix}تك توك @tag
+╠➤ ${prefix}من انا 
+╠➤ ${prefix}الأسره100
+╠➤ ${prefix}كويزما
+╠➤ ${prefix}اسهوتاك
+╠➤ ${prefix}خمن
+ ${prefix}
 ╠➤ ${prefix}tebakkata
-╠➤ ${prefix}susunkata
-╠➤ ${prefix}kimiakuis
+╠➤ ${prefix}ترتيب الكلمات
+╠➤ ${prefix}كيمياء
 ╠➤ ${prefix}caklontong
 ╠➤ ${prefix}tebakjenaka
 ╠➤ ${prefix}tebakanime
